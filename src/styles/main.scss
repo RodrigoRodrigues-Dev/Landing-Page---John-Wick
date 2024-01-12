@@ -1,1 +1,21 @@
 @use 'reset';
+@use 'variaveis';
+
+@mixin text($fontWeight: 100) {
+    font-size: 19px;
+    font-weight: $fontWeight;
+    font-family: variaveis.$fontPrincipal;
+    color: variaveis.$corPrincipalTexto;
+}
+
+.text {
+    @include text()
+}
+
+.text--button {
+    @include text($fontWeight: 500)
+}
+
+body {
+    background-color: variaveis.$corSearch;
+}
