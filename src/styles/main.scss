@@ -1,6 +1,7 @@
 @use 'reset';
 @use 'variaveis';
 @use 'hero';
+@use 'header';
 
 @mixin text($fontWeight: 100) {
     font-size: 19px;
@@ -19,7 +20,12 @@
 }
 
 .container {
-    max-width: 1840px;
+    max-width: 1700px;
     width: 100%;
     margin: 0 auto;
+    display: none;
+
+    &--is-active {
+        display: block;
+    }
 }

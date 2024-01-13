@@ -1,0 +1,52 @@
+@use 'variaveis';
+
+.header {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    padding: 38px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__search {
+        background-color: variaveis.$corSearch;
+        display: flex;
+        justify-content: space-around;
+        width: 320px;
+        padding: 10px 10px;
+        border-radius: 50px;
+
+        img {
+            cursor: pointer;
+        }
+
+        &__input {
+            background-color: variaveis.$corSearch;
+            border: none;
+
+            &:focus {
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
+        }
+    }
+
+    &__links {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            a {
+                &:hover {
+                    cursor: pointer;
+                    color:  darken(rgba(variaveis.$corPrincipalTexto, 0.7), 30%);
+                }
+            }
+        }
+    }
+}

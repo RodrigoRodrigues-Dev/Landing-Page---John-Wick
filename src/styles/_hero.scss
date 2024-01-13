@@ -18,12 +18,12 @@
        
     }
 
-    .container {
+    &__container {
         display: flex;
         justify-content: end;
     }
 
-    &__container {
+    &__content {
         max-width: 600px;
         text-align: center;
         z-index: 1;
@@ -53,6 +53,7 @@
     &__nav {
         position: absolute;
         bottom: 0;
+        left: 0;
         padding: 15px 0px;
         z-index: 1;
         width: 100%;
