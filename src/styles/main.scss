@@ -1,11 +1,13 @@
 @use 'reset';
 @use 'variaveis';
+@use 'hero';
 
 @mixin text($fontWeight: 100) {
     font-size: 19px;
     font-weight: $fontWeight;
     font-family: variaveis.$fontPrincipal;
     color: variaveis.$corPrincipalTexto;
+    letter-spacing: 3px;
 }
 
 .text {
@@ -16,6 +18,8 @@
     @include text($fontWeight: 500)
 }
 
-body {
-    background-color: variaveis.$corSearch;
+.container {
+    max-width: 1840px;
+    width: 100%;
+    margin: 0 auto;
 }

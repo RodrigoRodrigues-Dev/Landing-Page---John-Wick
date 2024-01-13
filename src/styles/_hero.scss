@@ -1,0 +1,74 @@
+@use 'variaveis';
+
+.hero {
+    background-image: url(../images/imgPrincipal.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    z-index: -1;
+
+    &::after {
+        content: '';
+
+        width: inherit;
+        height: inherit;
+        position: fixed;
+        inset: 0; 
+        background-color: rgba(variaveis.$corSobreposicao, 0.2);
+       
+    }
+
+    .container {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__container {
+        max-width: 600px;
+        text-align: center;
+        z-index: 1;
+
+        img {
+            margin-top: 6.7em;
+            margin-bottom: 7em;
+            width: 100%;
+        }
+
+        &_button {
+            margin-top: 5.5em;
+            width: 243px;
+            height: 37px;
+            background-color: rgba(variaveis.$corSecundaria, 0.5);
+            border: 1px solid variaveis.$corPrincipalTexto;
+            border-radius: 18px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten(rgba(variaveis.$corSecundaria, 0.5), 5%);
+            }
+        }
+
+    }
+
+    &__nav {
+        position: absolute;
+        bottom: 0;
+        padding: 15px 0px;
+        z-index: 1;
+        width: 100%;
+
+        &__links {
+            display: flex;
+            justify-content: space-around;
+
+            &__item {
+                a {
+                    &:hover {
+                        cursor: pointer;
+                        color:  darken(rgba(variaveis.$corPrincipalTexto, 0.7), 30%);
+                    }
+                }
+            }
+        }
+    }
+}
