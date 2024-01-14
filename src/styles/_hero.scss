@@ -34,20 +34,6 @@
             width: 100%;
         }
 
-        &_button {
-            margin-top: 5.5em;
-            width: 243px;
-            height: 37px;
-            background-color: rgba(variaveis.$corSecundaria, 0.5);
-            border: 1px solid variaveis.$corPrincipalTexto;
-            border-radius: 18px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: lighten(rgba(variaveis.$corSecundaria, 0.5), 5%);
-            }
-        }
-
     }
 
     &__nav {

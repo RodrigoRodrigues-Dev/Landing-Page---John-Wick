@@ -4,24 +4,37 @@
 @use 'header';
 @use 'gallery';
 
-@mixin text($fontWeight: 100) {
-    font-size: 19px;
-    font-weight: $fontWeight;
-    font-family: variaveis.$fontPrincipal;
-    color: variaveis.$corPrincipalTexto;
-    letter-spacing: 3px;
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
 }
 
 body {
     background-color: variaveis.$corSecundaria;
 }
 
+@mixin text($fontWeight: 100, $fontSize: 19px) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    font-family: variaveis.$fontPrincipal;
+    color: variaveis.$corPrincipalTexto;
+    letter-spacing: 3px;
+}
+
+
 .text {
     @include text()
 }
 
-.text--button {
-    @include text($fontWeight: 500)
+.title {
+    @include text($fontSize: 3em);
+
+    text-transform: uppercase;
+    letter-spacing: 20px;
 }
 
 .container {
@@ -52,6 +65,112 @@ body {
     cursor: pointer;
 }
 
+.button {
+    @include text($fontWeight: bold);
+    margin-top: 5.5em;
+    width: 243px;
+    height: 37px;
+    border-radius: 18px;
+    cursor: pointer;
+
+    &--dark {
+        background-color: rgba(variaveis.$corSecundaria, 0.5);
+        border: 1px solid variaveis.$corPrincipalTexto;
+
+        
+        &:hover {
+            background-color: lighten(rgba(variaveis.$corSecundaria, 0.5), 5%);
+        }
+    }
+
+    &--light {
+        color: variaveis.$corSecundaria;
+        background-color: variaveis.$corPrincipalTexto;
+        border: 1px solid variaveis.$corSecundaria;
+        
+        &:hover {
+            background-color: lighten(rgba(variaveis.$corSecundaria, 0.5), 5%);
+        }
+    }
+}
+
 .section--is-active {
-    display: block;
+    display: block !important;
+}
+
+.heroForm {
+    background-image: url(../images/LogIn-SingUp.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: inherit;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+    &::after {
+        content: '';
+        
+        z-index: -1;
+        width: inherit;
+        height: inherit;
+        position: fixed;
+        inset: 0; 
+        background-color: rgba(variaveis.$corSecundaria, 0.5);
+       
+    }
+
+    &__container {
+        max-width: 1600px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding-bottom: 70px;
+    }
+
+    .title {
+        margin-top: 250px;
+        margin-bottom: 65px;
+    }
+
+    &__form {
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+
+        div {
+            width: 100%;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        label {
+            margin-bottom: 25px;
+        }
+
+        &__input {
+            background-color: variaveis.$corSecundaria;
+            border: 1px #fff solid;
+            border-radius: 25px;
+            padding: 10px;
+            height: 50px;
+            width: 100%;
+            opacity: 60%;
+
+            &:focus {
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
+        }
+
+        .text--button {
+            color: variaveis.$corSecundaria;
+        }
+    }
+
 }
