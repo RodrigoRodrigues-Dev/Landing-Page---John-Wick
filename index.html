@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container container--is-active">
             <div class="header__container">
                 <div class="header__search">
                     <img src="./dist/images/lupa.png" alt="">
@@ -28,7 +28,7 @@
         </div>
     </header>
     <section class="hero">
-        <div class="container">
+        <div class="container container--is-active">
             <div class="hero__container">
                 <div class="hero__content">
                     <h1>
@@ -43,29 +43,23 @@
                 </div>
                 <div class="hero__nav">
                     <ul class="hero__nav__links">
-                        <li class="hero__nav__links__item">
-                            <a class="text" href="#">Home</a>
+                        <li class="hero__nav__links__item" data-nav-button="movie_premiere">
+                            <a class="text">Movie premiere</a>
                         </li>
-                        <li class="hero__nav__links__item">
-                            <a class="text" href="#">Movie premiere</a>
+                        <li class="hero__nav__links__item" data-nav-button="gallery">
+                            <a class="text" >Gallery</a>
                         </li>
-                        <li class="hero__nav__links__item">
-                            <a class="text" href="#">Guns</a>
-                        </li>
-                        <li class="hero__nav__links__item">
-                            <a class="text" href="#" >Gallery</a>
-                        </li>
-                        <li class="hero__nav__links__item">
-                            <a class="text" href="#" >Story</a>
+                        <li class="hero__nav__links__item" data-nav-button="story">
+                            <a class="text" >Story</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" data-section-id="gallery">
         <div class="gallery__container">
-            <a href="" class="button-close text">+</a>
+            <a class="button-close text">+</a>
             <h2 class="text">Gallery</h2>
             <div class="line"></div>
             <ul class="gallery__list">
@@ -90,5 +84,7 @@
             </ul>
         </div>
     </section>
+
+    <script src="./src/scripts/main.js"></script>
 </body>
 </html>
