@@ -2,6 +2,7 @@
 @use 'variaveis';
 @use 'hero';
 @use 'header';
+@use 'gallery';
 
 @mixin text($fontWeight: 100) {
     font-size: 19px;
@@ -9,6 +10,10 @@
     font-family: variaveis.$fontPrincipal;
     color: variaveis.$corPrincipalTexto;
     letter-spacing: 3px;
+}
+
+body {
+    background-color: variaveis.$corSecundaria;
 }
 
 .text {
@@ -28,4 +33,21 @@
     &--is-active {
         display: block;
     }
+}
+
+.line {
+    background-color: variaveis.$corPrincipalTexto;
+    height: 2px;
+    width: 100%;
+    margin: 75px 0;
+}
+
+.button-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 80px;
+    transform: rotate(45deg);
+    padding: 20px 40px;
+    cursor: pointer;
 }
