@@ -3,6 +3,7 @@
 @use 'hero';
 @use 'header';
 @use 'gallery';
+@use 'story';
 
 body::-webkit-scrollbar {
     display: none;
@@ -37,6 +38,11 @@ body {
     letter-spacing: 20px;
 }
 
+.sub-title {
+    @include text($fontWeight: 800, $fontSize: 2em);
+    text-transform: uppercase;
+}
+
 .container {
     max-width: 1700px;
     width: 100%;
@@ -67,11 +73,12 @@ body {
 }
 
 .button {
-    @include text($fontWeight: bold);
+    @include text($fontWeight: 800, $fontSize: 1.3em);
     margin-top: 5.5em;
     width: 243px;
-    height: 37px;
-    border-radius: 18px;
+    padding: 5px;
+    padding-bottom: 8px;
+    border-radius: 20px;
     cursor: pointer;
 
     &--dark {

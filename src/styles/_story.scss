@@ -1,0 +1,51 @@
+@use 'variaveis';
+
+.story {
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: inherit;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+
+
+    &::after {
+        content: '';
+        
+        z-index: -1;
+        width: inherit;
+        height: inherit;
+        position: fixed;
+        inset: 0; 
+        background-color: rgba(variaveis.$corSobreposicao, 0.5);
+       
+    }
+
+    &__container {
+        max-width: 1600px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding-bottom: 70px;
+    }
+
+    &__content {
+        max-width: 700px;
+        width: 100%;
+        margin-top: 20%;
+        text-align: center;
+
+        &__buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        p {
+            margin-top: 25px;
+        }
+    }
+}
