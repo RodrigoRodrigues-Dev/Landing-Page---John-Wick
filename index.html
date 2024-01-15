@@ -8,18 +8,18 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container container--is-active">
             <div class="header__container">
                 <div class="header__search">
-                    <img src="./dist/images/lupa.png" alt="">
+                    <img src="./dist/images/lupa.png" alt="" class="header__search__icon">
                     <input type="text" class="header__search__input text">
                 </div>
                 <nav>
                     <ul class="header__links">
-                        <li class="header__links__item">
+                        <li class="header__links__item" data-nav-button="signup">
                             <a href="" class="text">Sign up</a>
                         </li>
-                        <li class="header__links__item">
+                        <li class="header__links__item" data-nav-button="login">
                             <a href="" class="text">Log in</a>
                         </li>
                     </ul>
@@ -28,16 +28,16 @@
         </div>
     </header>
     <section class="hero">
-        <div class="container">
+        <div class="container container--is-active">
             <div class="hero__container">
                 <div class="hero__content">
                     <h1>
-                        <img src="./dist/images/john wick logo.png" alt="">
+                        <img src="./dist/images/john wick logo.png" alt="" class="hero__logo">
                     </h1>
-                    <p class="text">
+                    <p class="text hero__content-text">
                         Keanu Reeves born on September 2, 1964, is a Canadian-American actor and musician. He gained several block-buster films including comedies from the Bill and Ted franchise (1989- 1991), action thrillers Point Break (1991), Speed (1994), and the John Wick franchise (2014 - 2019).
                     </p>
-                    <button class="hero__content_button text--button">
+                    <button class="hero__content-button button button--dark" data-nav-button="login">
                         Join
                     </button>
                 </div>
@@ -84,25 +84,50 @@
             </ul>
         </div>
     </section>
-    <section class="heroForm section--is-active" data-section-id="heroform">
+    <section class="imageText" data-section-id="signup">
         <a class="button-close text">+</a>
-        <div class="heroForm__container">
+        <div class="imageText__container">
             <h2 class="title">New user</h2>
-            <form class="heroForm__form">
+            <form class="imageText__form">
                 <div>
-                    <label for="" class="text">mail</label>
-                    <input type="text" class="heroForm__form__input text">
+                    <label for="" class="text">Mail</label>
+                    <input type="text" class="imageText__form__input text">
                 </div>
                 <div>
-                    <label for="" class="text">password</label>
-                    <input type="text" class="heroForm__form__input text">
+                    <label for="" class="text">Password</label>
+                    <input type="text" class="imageText__form__input text">
                 </div>
                 <div>
-                    <label for="" class="text">user</label>
-                    <input type="text" class="heroForm__form__input text">
+                    <label for="" class="text">User</label>
+                    <input type="text" class="imageText__form__input text">
                 </div>
 
                 <button class="button button--light">Sign Up</button>
+            </form>
+        </div>
+    </section>
+    <section class="imageText" data-section-id="login">
+        <a class="button-close text">+</a>
+        <div class="imageText__container">
+            <h2 class="title">Log In</h2>
+            <form class="imageText__form">
+                <div>
+                    <label for="" class="text">Mail</label>
+                    <input type="text" class="imageText__form__input text">
+                </div>
+                <div>
+                    <label for="" class="text">Password</label>
+                    <input type="text" class="imageText__form__input text">
+                </div>
+                <div class="imageText__form__recovery">
+                    <p>
+                        <a href="" class="text">Forgot your password? Click here</a>
+                    </p>
+                    <p>
+                        <a href="" class="text">Haven't an account yet? Create one</a>
+                    </p>
+                </div>
+                <button class="button button--light">Log In</button>
             </form>
         </div>
     </section>
