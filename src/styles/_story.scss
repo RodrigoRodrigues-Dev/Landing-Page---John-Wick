@@ -47,5 +47,25 @@
         p {
             margin-top: 25px;
         }
+
+        &__soldOut {
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+
+            span {
+                padding: 10px 35px;
+                text-transform: uppercase;
+            }
+
+            &--is-active {
+                opacity: 1;
+            }
+        }
     }
 }

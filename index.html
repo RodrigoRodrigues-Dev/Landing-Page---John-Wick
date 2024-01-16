@@ -103,6 +103,14 @@
             </form>
         </div>
     </section>
+    <section class="trailer"  data-section-id="trailer">
+        <a class="button-close text">+</a>
+        <div class="trailer__content">
+            <video>
+                <source src="./dist/video/-John Wick_ Chapter 3 - Parabellum (2019 Movie) Official Trailer – Keanu Reeves, Halle Berry-(1080p).mp4">
+            </video>
+        </div>
+    </section>
     <section class="gallery" data-section-id="gallery">
         <div class="gallery__container">
             <a class="button-close text">+</a>
@@ -139,20 +147,15 @@
                 <p class="text">CHAPTER 3, PARABELLUM</p>
                 <p class="text">ACTION, THRILLER</p>
                 <div class="story__content__buttons">
-                    <a class="button button--light">BUY TICKETS</a>
+                    <a class="button button--light" data-story-button="tickets">BUY TICKETS</a>
                     <a class="button button--dark" data-nav-button="trailer">TRAILER</a>
                 </div>
            </div>
+            <div class="story__content__soldOut">
+                <span class="button button--light">Tickets Sold Out</span>
+            </div>
         </div>
     </section>
-    <section class="trailer"  data-section-id="trailer">
-        <a class="button-close text">+</a>
-        <div class="trailer__content">
-            <video>
-                <source src="./src/video/-John Wick_ Chapter 3 - Parabellum (2019 Movie) Official Trailer – Keanu Reeves, Halle Berry-(1080p).mp4">
-            </video>
-        </div>
-    </section>
-    <script src="./src/scripts/main.js"></script>
+    <script src="./dist/scripts/main.js"></script>
 </body>
 </html>

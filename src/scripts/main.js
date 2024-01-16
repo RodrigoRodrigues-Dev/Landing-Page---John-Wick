@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const buttonsNav = document.querySelectorAll('[data-nav-button]');
     const buttonClose = document.querySelectorAll('.button-close');
+    const buttonTickets = document.querySelector('[data-story-button]');
     const video = document.querySelector('video');
 
     buttonsNav.forEach(button => {
@@ -14,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             section.classList.add('section--is-active');
             header.classList.remove('header--is-active');
-            console.log('vai da trbalho');
 
             if (targetId === 'trailer') {
                 video.play();
@@ -28,6 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
             showContentHover();
             video.pause();
         });
+    });
+
+    buttonTickets.addEventListener('click', () => {
+        const soldOut = document.querySelector('.story__content__soldOut');
+    
+        if (soldOut) {
+            soldOut.classList.add('story__content__soldOut--is-active');
+        }
+
+        setTimeout(() => {
+            soldOut.classList.remove('story__content__soldOut--is-active');
+        }, 1000);
     });
 });
 
