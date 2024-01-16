@@ -7,9 +7,9 @@
     <title>John Wick</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container container--is-active">
-            <div class="header__container">
+    <header class="header header--is-active">
+        <div class="header__container">
+            <div class="header__content">
                 <div class="header__search">
                     <img src="./dist/images/lupa.png" alt="" class="header__search__icon">
                     <input type="text" class="header__search__input text">
@@ -43,8 +43,8 @@
                 </div>
                 <div class="hero__nav">
                     <ul class="hero__nav__links">
-                        <li class="hero__nav__links__item" data-nav-button="movie_premiere">
-                            <a class="text">Movie premiere</a>
+                        <li class="hero__nav__links__item" data-nav-button="trailer">
+                            <a class="text">Trailer</a>
                         </li>
                         <li class="hero__nav__links__item" data-nav-button="gallery">
                             <a class="text" >Gallery</a>
@@ -140,12 +140,19 @@
                 <p class="text">ACTION, THRILLER</p>
                 <div class="story__content__buttons">
                     <a class="button button--light">BUY TICKETS</a>
-                    <a class="button button--dark">TRAILER</a>
+                    <a class="button button--dark" data-nav-button="trailer">TRAILER</a>
                 </div>
            </div>
         </div>
     </section>
-
+    <section class="trailer"  data-section-id="trailer">
+        <a class="button-close text">+</a>
+        <div class="trailer__content">
+            <video>
+                <source src="./src/video/-John Wick_ Chapter 3 - Parabellum (2019 Movie) Official Trailer – Keanu Reeves, Halle Berry-(1080p).mp4">
+            </video>
+        </div>
+    </section>
     <script src="./src/scripts/main.js"></script>
 </body>
 </html>

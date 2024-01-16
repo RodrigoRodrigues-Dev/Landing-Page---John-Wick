@@ -5,8 +5,15 @@
     position: absolute;
     width: 100%;
     padding: 38px 0;
+    display: none;
 
     &__container {
+        max-width: 1700px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -48,5 +55,9 @@
                 }
             }
         }
+    }
+
+    &--is-active {
+        display: block;
     }
 }

@@ -1,0 +1,37 @@
+@use 'variaveis';
+
+.trailer {
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: inherit;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+
+
+    &::after {
+        content: '';
+        
+        z-index: -1;
+        width: inherit;
+        height: inherit;
+        position: fixed;
+        inset: 0; 
+        background-color: rgba(variaveis.$corSecundaria, 0.9);
+       
+    }
+
+    &__content {
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+
+        video {
+            width: 100%;
+        }
+    }
+}
