@@ -19,30 +19,50 @@ body {
     background-color: variaveis.$corSecundaria;
 }
 
-@mixin text($fontWeight: 100, $fontSize: 19px) {
+@mixin text($fontWeight: 100, $fontSize: 18px) {
     font-size: $fontSize;
     font-weight: $fontWeight;
     font-family: variaveis.$fontPrincipal;
     color: variaveis.$corPrincipalTexto;
+    letter-spacing: 4px;
+}
+
+.text {
+    @include text();
+
+    @media(max-width: 1720px) {
+        @include text($fontSize: 12px);
+    }
+}
+
+.text--mobile {
+    @include text($fontSize: 20px);
+}
+
+.text--alert {
+    @include text($fontWeight: 800, $fontSize: 15px);
+
+    text-transform: uppercase;
+    border-radius: 30px;
     letter-spacing: 3px;
 }
 
-
-.text {
-    @include text()
-}
-
 .title {
-    @include text($fontSize: 3em);
+    @include text($fontSize: 55px);
 
     text-transform: uppercase;
     letter-spacing: 20px;
+
+    @media(max-width: 1720px) {
+        @include text($fontSize: 35px);
+    }
 }
 
 .sub-title {
     @include text($fontWeight: 800, $fontSize: 2em);
     text-transform: uppercase;
 }
+
 
 .container {
     max-width: 1700px;
@@ -53,6 +73,14 @@ body {
     &--is-active {
         display: block;
     }
+
+    @media (max-width: 768px) {
+        max-width: 300px;
+    }
+
+    @media (max-width: 1720px) {
+        max-width: 1250px;
+    }
 }
 
 .line {
@@ -60,6 +88,10 @@ body {
     height: 2px;
     width: 100%;
     margin: 75px 0;
+
+    @media(max-width: 1720px) {
+        margin: 40px 0;
+    }
 }
 
 .button-close {
@@ -71,11 +103,17 @@ body {
     width: 50px;
     padding: 25px 80px;
     cursor: pointer;
+
+    @media(max-width: 1720px) {
+        width: 10px;
+        font-size: 60px;
+        padding: 10px 40px;
+    }
 }
 
 .button {
-    @include text($fontWeight: 800, $fontSize: 1.3em);
-    margin-top: 5.5em;
+    @include text($fontWeight: 800, $fontSize: 23px);
+    margin-top: 90px;
     width: 243px;
     padding: 5px;
     padding-bottom: 8px;
@@ -93,12 +131,23 @@ body {
     }
 
     &--light {
-        color: variaveis.$corSecundaria;
         background-color: variaveis.$corPrincipalTexto;
+        color: variaveis.$corSecundaria;
         border: 1px solid variaveis.$corSecundaria;
         
         &:hover {
-            background-color: lighten(rgba(variaveis.$corSecundaria, 0.5), 5%);
+            background-color: darken(rgba(variaveis.$corPrincipalTexto, 0.8), 20%);
+        }
+    }
+
+    @media(max-width: 1720px) {
+        @include text($fontWeight: 800, $fontSize: 15px);
+        width: 200px;
+        margin-top: 50px;
+
+
+        &--light {
+            color: variaveis.$corSecundaria;
         }
     }
 }
@@ -132,33 +181,23 @@ body {
     }
 
     &__container {
-        max-width: 1600px;
-        width: 100%;
-        margin: auto;
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100vh;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: end;
-        padding-bottom: 70px;
+        flex-direction: column;
     }
 
     .title {
-        margin-top: 250px;
-        margin-bottom: 65px;
+        margin-bottom: 64px;
     }
 
     &__form {
         max-width: 600px;
         width: 100%;
         text-align: center;
-
-        p {
-            width: 100%;
-
-            &:first-child {
-                margin-bottom: 65px;
-            }
-        }
-
 
         div {
             width: 100%;
@@ -169,15 +208,15 @@ body {
         }
 
         label {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         &__input {
             background-color: variaveis.$corSecundaria;
             border: 1px #fff solid;
-            border-radius: 25px;
-            padding: 10px;
-            height: 50px;
+            border-radius: 24px;
+            padding: 8px;
+            height: 52px;
             width: 100%;
             opacity: 60%;
 
@@ -187,9 +226,75 @@ body {
             }
         }
 
-        .text--button {
-            color: variaveis.$corSecundaria;
+        &__recovery {           
+            p {
+                width: 100%;
+
+                &:first-child {
+                    margin-bottom: 64px;
+                }
+            }
         }
     }
 
+    @media(max-width: 1720px) {
+        .imageText {
+
+            &__container {
+                max-width: 1150px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            &__form {
+                max-width: 400px;
+
+                .button {
+                    margin-top: 20px;
+                }
+
+                
+            &__recovery {           
+                p {
+                    width: 100%;
+
+                    &:first-child {
+                        margin-bottom: 36px;
+                    }
+                }
+        }
+            }
+        }
+       
+        .title {
+            margin-bottom: 24px;
+        }
+    }
+
+    @media(max-width: 1280px) {
+        .imageText {
+            &__container {
+                max-width: 350px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.icon-menu-mobile {
+    position: fixed;
+    border: none;
+    right: 0;
+    width: 50px;
+    padding: 10px;
+    margin: 15px;
+    background-color: transparent;
+
+    &__line {
+        display: block;
+        height: 3px;
+        margin: 5px 0;
+        width: 100%;
+        background-color: variaveis.$corPrincipalTexto;
+    }
 }

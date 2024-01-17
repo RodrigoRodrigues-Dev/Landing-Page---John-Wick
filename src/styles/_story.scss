@@ -24,19 +24,17 @@
     }
 
     &__container {
-        max-width: 1600px;
-        width: 100%;
-        margin: auto;
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100vh;
         display: flex;
-        flex-direction: column;
-        align-items: end;
-        padding-bottom: 70px;
+        justify-content: end;
+        align-items: center;
     }
 
     &__content {
         max-width: 700px;
         width: 100%;
-        margin-top: 20%;
         text-align: center;
 
         &__buttons {
@@ -51,20 +49,58 @@
         &__soldOut {
             opacity: 0;
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            margin-bottom: 20px;
+            margin-top: 5%;
             transition: opacity 0.5s ease;
             pointer-events: none;
+            white-space: nowrap;
 
-            span {
-                padding: 10px 35px;
-                text-transform: uppercase;
+            &__alert {
+                padding: 10px 60px;
+                color: variaveis.$corPrincipalTexto;
+                background-color: variaveis.$corAlert;
+                border: 2px solid variaveis.$corPrincipalTexto;
             }
 
             &--is-active {
                 opacity: 1;
+            }
+        }
+    }
+
+    @media(max-width: 1280px) {
+        .story {
+            &__container {
+                max-width: 350px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__content {
+                &__buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &__soldOut {
+                    margin-top: 160px;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 1720px) {
+        .story {
+            &__container {
+                max-width: 1100px;
+                width: 100%;
+            }
+
+            &__content {
+                max-width: 450px;
+                width: 100%;
             }
         }
     }

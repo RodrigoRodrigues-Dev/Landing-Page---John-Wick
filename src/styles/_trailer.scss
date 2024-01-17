@@ -29,9 +29,19 @@
         height: 100vh;
         display: flex;
         justify-content: center;
+        align-items: center;
 
         video {
             width: 100%;
+        }
+    }
+
+    @media(max-width: 1720px) {
+        .trailer {
+            &__content {
+                max-width: 1000px;
+                width: 100%;
+            }
         }
     }
 }

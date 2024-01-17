@@ -26,6 +26,37 @@
                 </nav>
             </div>
         </div>
+        <button class="icon-menu-mobile" data-mobile-button="open">
+            <span class="icon-menu-mobile__line"></span>
+            <span class="icon-menu-mobile__line"></span>
+            <span class="icon-menu-mobile__line"></span>
+        </button>
+        <div class="mobile__search mobile__search--is-active">
+            <img src="./dist/images/lupa.png" alt="" class="mobile__search__icon">
+            <input type="text" class="mobile__search__input text">
+        </div>
+        <div class="menu-mobile" data-mobile-menu="menu">
+            <a class="button-close text" data-mobile-button="close">+</a>
+            <nav>
+                <ul class="menu-mobile__links">
+                    <li class="menu-mobile__links__item" data-nav-button="signup">
+                        <a class="text--mobile">Sign up</a>
+                    </li>
+                    <li class="menu-mobile__links__item" data-nav-button="login">
+                        <a class="text--mobile">Log in</a>
+                    </li>
+                    <li class="menu-mobile__links__item" data-nav-button="trailer">
+                        <a class="text--mobile">Trailer</a>
+                    </li>
+                    <li class="menu-mobile__links__item" data-nav-button="gallery">
+                        <a class="text--mobile" >Gallery</a>
+                    </li>
+                    <li class="menu-mobile__links__item" data-nav-button="story">
+                        <a class="text--mobile" >Story</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <section class="hero">
         <div class="container container--is-active">
@@ -63,16 +94,16 @@
             <h2 class="title">New user</h2>
             <form class="imageText__form">
                 <div>
-                    <label for="" class="text">Mail</label>
-                    <input type="text" class="imageText__form__input text">
+                    <label for="mail" class="text">Mail</label>
+                    <input type="text" id="mail" class="imageText__form__input text">
                 </div>
                 <div>
-                    <label for="" class="text">Password</label>
-                    <input type="text" class="imageText__form__input text">
+                    <label for="password" class="text">Password</label>
+                    <input type="text"  id="password" class="imageText__form__input text">
                 </div>
                 <div>
-                    <label for="" class="text">User</label>
-                    <input type="text" class="imageText__form__input text">
+                    <label for="user" class="text">User</label>
+                    <input type="text" id="user" class="imageText__form__input text">
                 </div>
                 <button class="button button--light">Sign Up</button>
             </form>
@@ -84,12 +115,12 @@
             <h2 class="title">Log In</h2>
             <form class="imageText__form">
                 <div>
-                    <label for="" class="text">Mail</label>
-                    <input type="text" class="imageText__form__input text">
+                    <label for="mail" class="text">Mail</label>
+                    <input type="text" id="mail" class="imageText__form__input text">
                 </div>
                 <div>
-                    <label for="" class="text">Password</label>
-                    <input type="text" class="imageText__form__input text">
+                    <label for="password" class="text">Password</label>
+                    <input type="text"  id="password" class="imageText__form__input text">
                 </div>
                 <div class="imageText__form__recovery">
                     <p>
@@ -152,7 +183,7 @@
                 </div>
            </div>
             <div class="story__content__soldOut">
-                <span class="button button--light">Tickets Sold Out</span>
+                <span class="story__content__soldOut__alert text text--alert">Tickets Sold Out</span>
             </div>
         </div>
     </section>
